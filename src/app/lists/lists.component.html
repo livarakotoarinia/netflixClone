@@ -1,0 +1,21 @@
+<ng-container *ngIf="movies; else squelette">
+    <div *ngFor="let movie of movies" class="poster_row" (click)="goTo(movie.id)">
+        <!-- <div class="list" *ngIf="movie.poster_path"> -->
+            <!-- <a [routerLink]="['/details', movie.id]"> -->
+                <!-- <img class="poster" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" alt="" > -->
+                <img class="poster" src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}" alt="">
+            <!-- </a> -->
+        <!-- </div> -->
+    </div>
+</ng-container>
+
+<ng-template #squelette>
+    <div class="list">
+        <ngx-skeleton-loader animation="pulse" [theme]="{ 
+            'border-radius': '5px',
+            height: '100%'
+          }">
+
+        </ngx-skeleton-loader>
+    </div>
+</ng-template>

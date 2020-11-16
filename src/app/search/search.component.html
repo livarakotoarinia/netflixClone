@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row justify-content-center">
+            <div class="col-3 mb-2" *ngFor="let movie of search_movies?.results">
+                <div class="card" >
+                    <img class="card-img-top" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" alt="{{movie.title}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie.title}}</h5>
+                        <p class="card-text" *ngIf="movie.overview">{{movie.overview | slice:0:100}} ...</p>
+                        <div>
+                            <a href="#" class="card-link">Détails</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

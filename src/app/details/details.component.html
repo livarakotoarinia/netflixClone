@@ -1,0 +1,18 @@
+<div class="main-content">
+    <img class="img-fluid" src="https://image.tmdb.org/t/p/original/{{movieInfo?.poster_path}}" alt="{{movieInfo.title}}">
+    <div class="container-fluid content">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- <iframe width="520" height="300" [src]="src" frameborder="0" allowfullscreen>
+                </iframe> -->
+                <youtube-player videoId="{{key}}" ></youtube-player>
+            </div>
+            <div class="col-lg-4 offset-4 description">
+                <h1>{{ movieInfo?.title }}</h1>
+                <p>Sortie le {{ movieInfo?.release_date | date:'longDate' }}</p>
+                <h3>Synopsis</h3>
+                <p>{{movieInfo?.overview}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-light " (scroll)="scroll($event)" [ngClass]="showNav ? 'nav_black' : 'null'">
+    <div class="input-group">
+        <input class="form-control mr-sm-2" [(ngModel)]="search" type="search" placeholder="Recherchez un film"
+            aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-success my-2 my-sm-0" id="basic-addon2" (click)="searchTerms(search)">Search</button>
+        </div>
+    </div>
+</nav>
+<!-- <div class="hero"></div> -->
+
+<header class="banner" [style.background-image]="banner"
+    style="background-position: center center;background-size: cover;">
+    <div class="banner__contents">
+        <h1 class="title">{{popular?.title}}</h1>
+        <div class="banner__buttons">
+            <button class="banner__button">Play</button>
+            <button class="banner__button">My List</button>
+        </div>
+        <h1 class="description">{{popular?.overview}}</h1>
+        <div class="banner_fade"></div>
+    </div>
+</header>
+
+
+<!-- <ng-container *ngIf="!search_movies"> -->
+    <div *ngFor="let genre of genreMovie">
+        <h1>{{ genre.name }}</h1>
+        <app-lists class=" scroll_box" [id]="genre.id"></app-lists>
+    </div>
+<!-- </ng-container> -->
